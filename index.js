@@ -16,3 +16,17 @@ for (let i = 0; i < 1000; i++) {
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+let fibArr = [1, 2];
+sum = 0;
+
+for (let i = 1; fibArr[i] < 4000000 - fibArr[i - 1]; i++) {
+  fibArr.push(fibArr[i] + fibArr[i - 1]);
+}
+
+for (let j = 0; fibArr[j] < 4000000; j++) {
+    if (fibArr[j] % 2 == 0) {
+      sum += fibArr[j];
+  }
+}
+
+console.log(sum)
